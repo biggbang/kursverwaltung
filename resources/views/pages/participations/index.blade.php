@@ -15,11 +15,12 @@
 
 @section('content')
 <div class="row">
-    @foreach($records as $record)
+    @forelse($records as $record)
     <div class="col-sm-6">
         @include('cards.participation')
     </div>
-    @endforeach
-</div>
+    @empty
+            <p>No data.</p>
+    @endforelse</div>
 {!! $records->render() !!}
 @endSection
